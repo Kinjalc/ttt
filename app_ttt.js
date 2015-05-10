@@ -30,11 +30,10 @@ console.log(storeMoves);
 
 $(document).ready(function(){
   $('.square').on('click',function(e) {
-   ($(this)).removeClass('square');
-   ($(this)).addClass('clicked');
-   // $('#player').text("player2 turn");
-    /* Act on the event */
-    selectPlayer($(this));
-    });
-
+    if (storeMoves[$(this).attr('id')]===undefined){
+     ($(this)).removeClass('square');
+     ($(this)).addClass('clicked');
+      selectPlayer($(this));
+    };
+  })
 })
