@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TicTacToe</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="ttt.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <h1>Tic Tac Toe</h1>
+
+    <div class="grid-container">
+        <!-- <div class="col1">
+          <div class="square" id="a1">a1</div>
+          <div class="square" id="a4">a4</div>
+          <div class="square" id="a7">a7</div>
+        </div>
+
+
+        <div class="col2">
+          <div class="square" id="a2">a2</div>
+          <div class="square" id="a5">a5</div>
+          <div class="square" id="a8">a8</div>
+        </div>
+
+
+        <div class= "col3">
+            <div class="square" id="a3">a3</div>
+            <div class="square" id="a6">a6</div>
+            <div class="square" id="a9">a9</div>
+        </div>
+    </div> -->
+<div class="grid-container">
+    <div class="row1">
+        <div class="square" id="a1">a1</div>
+        <div class="square" id="a2">a2</div>
+        <div class="square" id="a3">a3</div>
+    </div>
+    <div class="row2">
+        <div class="square" id="a4">a4</div>
+        <div class="square" id="a5">a5</div>
+        <div class="square" id="a6">a6</div>
+    </div>
+    <div class="row3">
+        <div class="square" id="a7">a7</div>
+        <div class="square" id="a8">a8</div>
+        <div class="square" id="a9">a9</div>
+    </div>
+</div>
+
+<div id="player" type=text > player1 plays</div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="app_ttt.js" type ="text/javascript"></script>
+    <!-- //  <script src="js/playlist.js" type ="text/javascript"></script>
+
+    // <script src="js/app.js" type="text/javascript"></script> -->
+           <!-- endbuild -->
+  </body>
+</html>
