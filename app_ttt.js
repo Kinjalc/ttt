@@ -1,8 +1,6 @@
 var player1 = 0;
 var player2 = 1;
-var storeMoves ={
-
-}
+var storeMoves ={};
 
 var selectPlayer=function(sqr){
     if (player1===0){
@@ -10,7 +8,7 @@ var selectPlayer=function(sqr){
       sqr.text("X");
       $('#player').text("player2 turn");
       player1 = 1-player1;
-      alert("player1 clicked " + sqr.attr('id'));
+      //alert("player1 clicked " + sqr.attr('id'));
       storeMoves[sqr.attr('id')] = "X";
 
     }
@@ -19,7 +17,7 @@ var selectPlayer=function(sqr){
       sqr.text("O");
       $('#player').text("player1 turn");
       player1 = 1-player1;
-      alert("player2 clicked " + sqr.attr('id'));
+      //alert("player2 clicked " + sqr.attr('id'));
       storeMoves[sqr.attr('id')] = "O";
     }
 
@@ -34,6 +32,8 @@ $(document).ready(function(){
      ($(this)).removeClass('square');
      ($(this)).addClass('clicked');
       selectPlayer($(this));
+      var storeMovesKey = ($(this)).attr('id');
+      winTheGame(storeMovesKey);
     };
   })
 })
