@@ -29,11 +29,14 @@ console.log(storeMoves);
 $(document).ready(function(){
   $('.square').on('click',function(e) {
     if (storeMoves[$(this).attr('id')]===undefined){
-     ($(this)).removeClass('square');
-     ($(this)).addClass('clicked');
+      ($(this)).removeClass('square');
+      ($(this)).addClass('clicked');
       selectPlayer($(this));
       var storeMovesKey = ($(this)).attr('id');
       winTheGame(storeMovesKey);
-    };
-  })
+      };
+    })
+
+
+
 })

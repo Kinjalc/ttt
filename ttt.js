@@ -44,33 +44,34 @@ var winTheGame= function(playerSquare){
     }
     else if (storeMoves['a4']==="O" && storeMoves['a5']==="O" && storeMoves['a6']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
     else if (storeMoves['a1']==="O" && storeMoves['a2']==="O" && storeMoves['a3']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
     else if (storeMoves['a1']==="O" && storeMoves['a4']==="O" && storeMoves['a7']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
     else if (storeMoves['a2']==="O" && storeMoves['a5']==="O" && storeMoves['a8']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
     else if (storeMoves['a3']==="O" && storeMoves['a6']==="O" && storeMoves['a9']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
     else if (storeMoves['a1']==="O" && storeMoves['a5']==="O" && storeMoves['a9']==="O") {
       win  = true;
-     alert("player1 wins!")
+     alert("player2 wins!")
     }
     else if (storeMoves['a3']==="O" && storeMoves['a5']==="O" && storeMoves['a7']==="O") {
       win  = true;
-      alert("player1 wins!")
+      alert("player2 wins!")
     }
 
-  }
+  };
+  return win;
 
 }
