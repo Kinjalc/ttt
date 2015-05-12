@@ -10,7 +10,7 @@ var winTheGame= function(playerSquare){
       (storeMoves['a1']===player && storeMoves['a5']===player && storeMoves['a9']===player) ||
       (storeMoves['a3']===player && storeMoves['a5']===player && storeMoves['a7']===player)) {
     win  = true;
-    alert(player + " wins!");
+    $('#player').text(player + " wins!");
     alert("Game ends!")
   }
 
