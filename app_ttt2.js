@@ -4,7 +4,7 @@ var player;
 var storeMoves={};
 
 var selectPlayer=function(sqr){
-  if (player1===0){
+    if (player1===0){
 
       sqr.text("X");
       player="X";
@@ -15,7 +15,8 @@ var selectPlayer=function(sqr){
       winTheGame(sqr.attr('id'));
       }
 
-  else {
+
+    else {
       sqr.text("O");
       player="O";
       $('#player').text("player1 turn");

@@ -1,4 +1,12 @@
-var winTheGame= function(playerSquare){
+var TicTacToe = TicTacToe || {}
+
+
+
+TicTacToe.playGame = function(){
+
+
+
+var winTheGame=function(playerSquare){
   var win = false;
   storeMoves[playerSquare]=== player;
     if(storeMoves['a1']===player && storeMoves['a2']===player && storeMoves['a3']===player) {
@@ -39,4 +47,5 @@ var winTheGame= function(playerSquare){
   }
   return win;
 
+}
 }
