@@ -25,7 +25,10 @@ var selectPlayer=function(sqr){
       player1 = 1-player1;
       //alert("player2 clicked " + sqr.attr('id'));
       storeMoves[sqr.attr('id')] = "O";
-      winTheGame(sqr.attr('id'));
+      // winTheGame(sqr.attr('id'));
+      if (winTheGame(sqr.attr('id')) === true){
+        $(".square").off("click");
+      }
     }
 
 console.log(storeMoves);
@@ -42,11 +45,10 @@ $(document).ready(function(){
       ($(this)).removeClass('square');
       ($(this)).addClass('clicked');
       selectPlayer($(this));
-
-      if(count===9 ){
+        if(count===9 ){
         $(".square").off("click");
         alert("It's a tie!")
-      }
+        }
 
     }
   })
