@@ -1,3 +1,4 @@
+'use strict';
 var player1 = 0 ;
 var player2 = 1 ;
 var player;
@@ -22,7 +23,7 @@ var selectPlayer=function(sqr){
 
         //$(".square").off("click");
       }
-      }
+  }
 
   else {
       sqr.text("O").addClass('animated zoomIn');
