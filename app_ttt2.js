@@ -2,26 +2,30 @@
 
 $(document).ready(function(){
   var count = 0;
-  var ttt= TicTacToe.PlayTheGame;
+  var ttt= TicTacToe.PlayTheGame();
   $('.square').on('click',function(e) {
-    debugger;
-    if (ttt.gameOver === true) {
 
+    console.log('click received on ' + $(this).attr('id'));
+    if (ttt.winStatus() === true) {
       alert("Game has ended");
-    } else if (ttt.storeMoves[$(this).attr('id')]===undefined){
-      count ++;
-      ($(this)).removeClass('square');
-      ($(this)).addClass('clicked');
-
-      ttt.selectPlayer($(this));
+      return;
+    } else {
+        ($(this)).removeClass('square');
+        ($(this)).addClass('clicked');
+        ttt.selectPlayer($(this));
+        count ++;
         if(count===9 ){
-        alert("It's a tie!");
-        $('#player').text("It's a tie!");
-        }
-    }
+            alert("It's a tie!");
+            $('#player').text("It's a tie!");
+          }
+      }
   })
   $('#reset').on('click',function(e){
           count=0;
           ttt.endGame();
-  })
-})
+
+  });
+});
+
+
+
