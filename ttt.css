@@ -34,11 +34,16 @@
 
   #player {
   border: 1px solid black;
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   margin: 0 auto;
   display: table;
-  margin-top: 2em;
+  margin-top: 1em;
+  width: 350px;
+  height: 40px;
+  font-size: 30px;
+  margin-bottom: 1em;
+  border-radius: 30px;
 }
 
 h1 {
@@ -54,4 +59,6 @@ h1 {
   margin: 0 auto;
   display: table;
   margin-top: 2em;
+  border-radius: 20px;
 }
+

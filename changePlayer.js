@@ -1,5 +1,3 @@
-'use strict';
-
 var TicTacToe = TicTacToe || {};
 TicTacToe.PlayTheGame= function(){
   var player1 = 0 ;
@@ -32,36 +30,65 @@ TicTacToe.PlayTheGame= function(){
 
   this.selectPlayer= function(sqr){
     if (storeMoves[sqr.attr('id')]===undefined){
-        if(player1===0){
+        if(player1=0){
         player="X";
       } else{
         player="O";
       }
-      this.playerDoesThis(sqr);
-    }
+      this.playerDoesThis();
+    };
     else{
       return;
     };
 
   }
-this.playerDoesThis= function(sqr){
+this.playerDoesThis= function(){
   player1= 1-player1;
   storeMoves[sqr.attr('id')]=player
-  sqr.html(player);
   if (player==="X"){
-    sqr.addClass('animated rotateIn');
+    sqr.text("X").addClass('animated rotateIn');
     $('#player').text("player2 turn");
   } else {
-
-    sqr.addClass('animated zoomIn');
+    storeMoves[sqr.attr('id')] = "O";
+    sqr.text("O").addClass('animated zoomIn');
     $('#player').text("player1 turn");
   };
   if (this.winTheGame()===true){
     $('#player').addClass('animated bounceInDown')
     $('.grid-container').addClass('animated bounceInUp');
-  }
+  };
   return this;
 }
+  // this.selectPlayer=function(sqr){
+  //   if (storeMoves[sqr.attr('id')]===undefined){
+  //     if (player1===0){
+  //       sqr.text("X").addClass('animated rotateIn');
+  //       player="X";
+  //       $('#player').text("player 2 turn");
+  //         player1 = 1-player1;
+  //         storeMoves[sqr.attr('id')] = "X";
+
+  //       if(this.winTheGame()===true){
+  //         $('#player').addClass('animated bounceInDown')
+  //         $('.grid-container').addClass('animated bounceInUp');
+  //       }
+  //     } else {
+  //         sqr.text("O").addClass('animated zoomIn');
+  //         player="O";
+  //         $('#player').text("player 1 turn");
+  //         player1 = 1-player1;
+  //         storeMoves[sqr.attr('id')] = "O";
+
+  //         if(this.winTheGame()===true){
+  //           $('#player').addClass('animated bounce');
+  //           $('.grid-container').addClass('animated bounce');
+  //         }
+  //       }
+  //   } else{
+  //     return;
+  //   }
+
+  // };
 
   this.winStatus = function(){
     return win;
@@ -86,7 +113,3 @@ this.playerDoesThis= function(sqr){
 return this;
 
 };
-
-
-
-

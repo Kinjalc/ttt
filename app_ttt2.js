@@ -8,21 +8,24 @@ $(document).ready(function(){
     console.log('click received on ' + $(this).attr('id'));
     if (ttt.winStatus() === true) {
       alert("Game has ended");
-      return;
     } else {
-        ($(this)).removeClass('square');
-        ($(this)).addClass('clicked');
-        ttt.selectPlayer($(this));
+      ($(this)).removeClass('square');
+      ($(this)).addClass('clicked');
+      ttt.selectPlayer($(this));
+      if (ttt.winStatus() !== true) {
         count ++;
-        if(count===9 ){
-            alert("It's a tie!");
-            $('#player').text("It's a tie!");
-          }
+        if(count===9){
+          alert("It's a tie!");
+          $('#player').text("It's a tie!");
+        }
       }
-  })
+
+    }
+  });
+
   $('#reset').on('click',function(e){
-          count=0;
-          ttt.endGame();
+    count=0;
+    ttt.endGame();
 
   });
 });
