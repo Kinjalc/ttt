@@ -62,3 +62,26 @@ h1 {
   border-radius: 20px;
 }
 
+#player1{
+  margin: 0 auto;
+  display: table;
+  clear: both;
+  width: 150px;
+  height:40px;
+  border-radius: 30px;
+  text-align: center;
+  font:20px;
+
+}
+
+#player2{
+  margin: 0 auto;
+  display: table;
+  width: 150px;
+  height:40px;
+  border-radius: 30px;
+  text-align: center;
+  font:20px;
+  margin-top: 1em;
+
+}
