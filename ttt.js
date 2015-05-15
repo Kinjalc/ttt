@@ -1,12 +1,25 @@
 'use strict';
 
 var TicTacToe = TicTacToe || {};
+TicTacToe.players = [];
 TicTacToe.PlayTheGame= function(){
-  var player1 = 0 ;
-  var player2 = 1 ;
-  var player;
   var win = false;
   var storeMoves = {};
+  var currentPlayer = 0 ;
+  var player;
+
+  this.selectPlayer= function(sqr){
+
+    if (storeMoves[sqr.attr('id')]===undefined){
+      player = TicTacToe.players[currentPlayer].token;
+
+      storeMoves[sqr.attr('id')]=player
+      this.playerDoesThis(sqr);
+      currentPlayer= (1+currentPlayer)%2;
+    } else{
+      return;
+    }
+  };
 
 
 
@@ -21,44 +34,31 @@ TicTacToe.PlayTheGame= function(){
         (storeMoves['a1']===player && storeMoves['a5']===player && storeMoves['a9']===player) ||
         (storeMoves['a3']===player && storeMoves['a5']===player && storeMoves['a7']===player)) {
         win=true;
-        $('#player').text(player + " wins!");
-        alert("Game ends!");
+        $('#player').text( TicTacToe.players[currentPlayer].name+ " wins!");
+        // alert("Game ends!");
     };
 
     return win;
 
   };
 
-  this.selectPlayer=function(sqr){
-    if (storeMoves[sqr.attr('id')]===undefined){
-      if (player1===0){
-        sqr.text("X").addClass('animated rotateIn');
-        player="X";
-        $('#player').text("player 2 turn");
-          player1 = 1-player1;
-          storeMoves[sqr.attr('id')] = "X";
 
-        if(this.winTheGame()===true){
-          $('#player').addClass('animated bounceInDown')
-          $('.grid-container').addClass('animated bounceInUp');
-        }
-      } else {
-          sqr.text("O").addClass('animated zoomIn');
-          player="O";
-          $('#player').text("player 1 turn");
-          player1 = 1-player1;
-          storeMoves[sqr.attr('id')] = "O";
+this.playerDoesThis= function(sqr){
+  sqr.html(player);
+  if (player==="X"){
+    sqr.addClass('animated rotateIn');
+    $('#player').text(TicTacToe.players[1].name + " turn");
+  } else {
 
-          if(this.winTheGame()===true){
-            $('#player').addClass('animated bounce');
-            $('.grid-container').addClass('animated bounce');
-          }
-        }
-    } else{
-      return;
-    }
-
+    sqr.addClass('animated zoomIn');
+    $('#player').text(TicTacToe.players[0].name + " turn");
   };
+  if (this.winTheGame()===true){
+    $('#player').addClass('animated bounceInDown')
+    $('.grid-container').addClass('animated bounceInUp');
+  }
+  return this;
+}
 
   this.winStatus = function(){
     return win;
@@ -69,17 +69,22 @@ TicTacToe.PlayTheGame= function(){
     $('.clicked').addClass('square');
     $('.square').removeClass('clicked');
     $('.square').removeClass('animated zoomIn');
-    $('.square').removeClass('animated rotateIn')
-    $('#player').removeClass('animated bounce')
+    $('.square').removeClass('animated rotateIn');
+    $('#player').removeClass('animated bounce');
+    $('.grid-container').removeClass('animated bounceInUp');
     console.log(this);
     storeMoves={};
-    player1=0;
-    player2=1;
+    currentPlayer=0;
+    TicTacToe.players=[];
     win = false;
     this.player= " ";
-    $('#player').text("Player 1 plays");
+    $('#player').text("Enter name");
 
   };
 return this;
 
 };
+
+
+
+
