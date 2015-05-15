@@ -19,7 +19,7 @@ TicTacToe.PlayTheGame= function(){
     } else{
       return;
     }
-  }
+  };
 
 
 
@@ -35,7 +35,7 @@ TicTacToe.PlayTheGame= function(){
         (storeMoves['a3']===player && storeMoves['a5']===player && storeMoves['a7']===player)) {
         win=true;
         $('#player').text( TicTacToe.players[currentPlayer].name+ " wins!");
-        alert("Game ends!");
+        // alert("Game ends!");
     };
 
     return win;
@@ -71,6 +71,7 @@ this.playerDoesThis= function(sqr){
     $('.square').removeClass('animated zoomIn');
     $('.square').removeClass('animated rotateIn');
     $('#player').removeClass('animated bounce');
+    $('.grid-container').removeClass('animated bounceInUp');
     console.log(this);
     storeMoves={};
     currentPlayer=0;
